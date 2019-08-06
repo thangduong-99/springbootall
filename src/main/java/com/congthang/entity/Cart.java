@@ -29,44 +29,57 @@ public class Cart {
 	@Column(name = "ORDER_NUM")
 	private int orderNum;
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "USER_ID", foreignKey = @ForeignKey(name = "USER_ID"))
+	@JoinColumn(name = "USER_ID", insertable = false, updatable = false, foreignKey = @ForeignKey(name = "USER_ID"))
 	private AppUser appUser;
+
 	public int getCartId() {
 		return cartId;
 	}
+
 	public void setCartId(int cartId) {
 		this.cartId = cartId;
 	}
+
 	public int getUserId() {
 		return userId;
 	}
+
 	public void setUserId(int userId) {
 		this.userId = userId;
 	}
+
 	public Double getAmount() {
 		return amount;
 	}
+
 	public void setAmount(Double amount) {
 		this.amount = amount;
 	}
+
 	public Date getOrderDate() {
 		return orderDate;
 	}
+
 	public void setOrderDate(Date orderDate) {
 		this.orderDate = orderDate;
 	}
+
 	public int getOrderNum() {
 		return orderNum;
 	}
+
 	public void setOrderNum(int orderNum) {
 		this.orderNum = orderNum;
 	}
+
 	public AppUser getAppUser() {
 		return appUser;
 	}
+
 	public void setAppUser(AppUser appUser) {
 		this.appUser = appUser;
 	}
+
 	public Cart(int cartId, int userId, Double amount, Date orderDate, int orderNum, AppUser appUser) {
 		super();
 		this.cartId = cartId;
@@ -76,9 +89,11 @@ public class Cart {
 		this.orderNum = orderNum;
 		this.appUser = appUser;
 	}
+
 	public Cart() {
 		super();
 	}
+
 	@Override
 	public String toString() {
 		return "Cart [cartId=" + cartId + ", userId=" + userId + ", amount=" + amount + ", orderDate=" + orderDate

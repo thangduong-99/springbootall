@@ -29,11 +29,11 @@ public class OderDetail {
 	@Column(name = "QUANTITY")
 	private int quantity;
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "CART_ID", //
+	@JoinColumn(name = "CART_ID", insertable = false, updatable = false,//
 			foreignKey = @ForeignKey(name = "CART_ID"))
 	private Cart cart;
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "PRODUCT_ID", //
+	@JoinColumn(name = "PRODUCT_ID", insertable = false, updatable = false,//
 			foreignKey = @ForeignKey(name = "PRODUCT_ID"))
 	private Product product;
 	public OderDetail(int orderId, int productId, int cartId, Double amount, Double price, int quantity, Cart cart,
