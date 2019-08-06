@@ -86,7 +86,7 @@ public class AppUserDAO {
 		Long userId = this.getMaxUserId() + 1;
 		String encrytedPassword = this.passwordEncoder.encode(form.getPassword());
 
-		AppUser user = new AppUser(userId, form.getUserName(), //
+		AppUser user = new AppUser(form.getUserName(), //
 				encrytedPassword, true, form.getFirstName(), form.getLastName(),
 				form.getEmail());
 

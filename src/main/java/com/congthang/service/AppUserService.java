@@ -1,5 +1,8 @@
 package com.congthang.service;
 
-public interface AppUserService {
+import com.congthang.entity.AppUser;
+import com.congthang.form.AppUserForm;
 
+public interface AppUserService {
+	public AppUser createAppUser(AppUserForm form);
 }

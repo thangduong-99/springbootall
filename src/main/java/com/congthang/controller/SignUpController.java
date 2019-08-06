@@ -17,6 +17,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.congthang.entity.AppUser;
 import com.congthang.form.AppUserForm;
 import com.congthang.repository.AppUserDAO;
+import com.congthang.service.AppUserService;
 import com.congthang.validator.AppUserValidator;
 
 @Controller
@@ -24,6 +25,9 @@ public class SignUpController {
  
    @Autowired
    private AppUserDAO appUserDAO;
+   
+   @Autowired
+   private AppUserService appUserService;
  
    @Autowired
    private AppUserValidator appUserValidator;
@@ -92,7 +96,7 @@ public class SignUpController {
       }
       AppUser newUser= null;
       try {
-         newUser = appUserDAO.createAppUser(appUserForm);
+         newUser = appUserService.createAppUser(appUserForm);
       }
       // Other error!!
       catch (Exception e) {
