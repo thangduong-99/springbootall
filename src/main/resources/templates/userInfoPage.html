@@ -1,21 +1,56 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
    <head>
-      <title>User Info</title>
+      <title th:utext="${title}"></title>
    </head>
-   <body style="margin-left: 25%; margin-right: 25%; border: solid; border-color: lightblue;">
+    
+   <style>
+   	body{
+   	margin-left: 25%;
+   	margin-right: 25%;
+   	
+   	}
+   	
+   	.member{
+   	margin-left: 25%;
+   	margin-right: 25%;
+   	}
+      table th, table td {
+         padding: 5px;
+      }
+      .message {
+         color: blue;
+      }
+   </style>
+    
+   <body >
+    
       <!-- Include _menu.html -->
-      <th:block th:include="/_menu"></th:block>
+      <th:block th:include="/_menu"></th:block>  
        
+       <div class="member">
        
-      <h2>User Info Page</h2>
-      <h3>Welcome : <span th:utext="${#request.userPrincipal.name}"></span></h3>
-      <b>This is protected page!</b>  
+         <h2 style="margin-left: 25% ">Members</h2>
        
-      <br/><br/>
+    
        
-      <div th:if="${userInfo != null}" th:utext="${userInfo}"></div>
+      <table border="1">
+            <tr>
+               <th>User Name</th>
+               <th>First Name</th>
+               <th>Last Name</th>
+               <th>Email</th>
+            </tr>
+            <tr th:object ="${member}">
+               <td th:utext="${member.userName}">...</td>
+               <td th:utext="${member.firstName}">...</td>
+               <td th:utext="${member.lastName}">...</td>
+               <td th:utext="${member.email}">...</td>
+              
+            </tr>
+      </table>
+       </div>
+    
        
    </body>
-    
 </html>
