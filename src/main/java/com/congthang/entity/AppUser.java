@@ -101,4 +101,8 @@ public class AppUser {
 		this.email = email;
 	}
 
+	public AppUser() {
+		super();
+	}
+
 }
