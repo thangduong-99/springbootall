@@ -89,4 +89,16 @@ public class AppUser {
 		this.email = email;
 	}
 
+	public AppUser(Long userId, String userName, String encrytedPassword, boolean enabled, String firstName,
+			String lastName, String email) {
+		super();
+		this.userId = userId;
+		this.userName = userName;
+		this.encrytedPassword = encrytedPassword;
+		this.enabled = enabled;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+	}
+
 }
