@@ -15,8 +15,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Repository;
 
+import com.congthang.dto.AppUserDTO;
 import com.congthang.entity.AppUser;
-import com.congthang.form.AppUserForm;
 
 @Repository
 @Transactional
@@ -82,7 +82,7 @@ public class AppUserDAO {
 		return list;
 	}
 
-	public AppUser createAppUser(AppUserForm form) {
+	public AppUser createAppUser(AppUserDTO form) {
 		Long userId = this.getMaxUserId() + 1;
 		String encrytedPassword = this.passwordEncoder.encode(form.getPassword());
 

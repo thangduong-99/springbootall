@@ -7,8 +7,8 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
+import com.congthang.dto.AppUserDTO;
 import com.congthang.entity.AppUser;
-import com.congthang.form.AppUserForm;
 import com.congthang.repository.AppUserDAO;
 
 @Component
@@ -23,12 +23,12 @@ public class AppUserValidator implements Validator {
 	// The classes are supported by this validator.
 	@Override
 	public boolean supports(Class<?> clazz) {
-		return clazz == AppUserForm.class;
+		return clazz == AppUserDTO.class;
 	}
 
 	@Override
 	public void validate(Object target, Errors errors) {
-		AppUserForm appUserForm = (AppUserForm) target;
+		AppUserDTO appUserForm = (AppUserDTO) target;
 
 		// Check the fields of AppUserForm.
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "userName", "NotEmpty.appUserForm.userName");

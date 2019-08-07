@@ -19,9 +19,9 @@ public class Cart {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "CART_ID")
-	private int cartId;
+	private Long cartId;
 	@Column(name = "USER_ID")
-	private int userId;
+	private Long userId;
 	@Column(name = "AMOUNT")
 	private Double amount;
 	@Column(name = "ORDER_DATE")
@@ -32,19 +32,19 @@ public class Cart {
 	@JoinColumn(name = "USER_ID", insertable = false, updatable = false, foreignKey = @ForeignKey(name = "USER_ID"))
 	private AppUser appUser;
 
-	public int getCartId() {
+	public Long getCartId() {
 		return cartId;
 	}
 
-	public void setCartId(int cartId) {
+	public void setCartId(Long cartId) {
 		this.cartId = cartId;
 	}
 
-	public int getUserId() {
+	public Long getUserId() {
 		return userId;
 	}
 
-	public void setUserId(int userId) {
+	public void setUserId(Long userId) {
 		this.userId = userId;
 	}
 
@@ -80,7 +80,7 @@ public class Cart {
 		this.appUser = appUser;
 	}
 
-	public Cart(int cartId, int userId, Double amount, Date orderDate, int orderNum, AppUser appUser) {
+	public Cart(Long cartId, Long userId, Double amount, Date orderDate, int orderNum, AppUser appUser) {
 		super();
 		this.cartId = cartId;
 		this.userId = userId;

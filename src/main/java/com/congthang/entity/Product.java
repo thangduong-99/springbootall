@@ -19,7 +19,7 @@ public class Product implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "PRODUCT_ID")
-	private int productId;
+	private Long productId;
 	@Column(name = "NAME")
 	private String name;
 	@Column(name = "BRAND")
@@ -34,7 +34,7 @@ public class Product implements Serializable{
 	@Temporal(TemporalType.TIMESTAMP)
     @Column(name = "CREAT_DATE", nullable = false)
     private Date createDate;
-	public Product(int productId, String name, String brand, String description, Double price, byte[] image,
+	public Product(Long productId, String name, String brand, String description, Double price, byte[] image,
 			Date createDate) {
 		super();
 		this.productId = productId;
@@ -48,10 +48,10 @@ public class Product implements Serializable{
 	public Product() {
 		super();
 	}
-	public int getProductId() {
+	public Long getProductId() {
 		return productId;
 	}
-	public void setProductId(int productId) {
+	public void setProductId(Long productId) {
 		this.productId = productId;
 	}
 	public String getName() {
