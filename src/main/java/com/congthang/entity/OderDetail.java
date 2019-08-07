@@ -17,11 +17,11 @@ public class OderDetail {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "ORDER_ID")
-	private int orderId;
+	private Long orderId;
 	@Column(name = "PRODUCT_ID")
-	private int productId;
+	private Long productId;
 	@Column(name = "CART_ID")
-	private int cartId;
+	private Long cartId;
 	@Column(name = "AMOUNT")
 	private Double amount;
 	@Column(name = "PRICE")
@@ -36,7 +36,7 @@ public class OderDetail {
 	@JoinColumn(name = "PRODUCT_ID", insertable = false, updatable = false,//
 			foreignKey = @ForeignKey(name = "PRODUCT_ID"))
 	private Product product;
-	public OderDetail(int orderId, int productId, int cartId, Double amount, Double price, int quantity, Cart cart,
+	public OderDetail(Long orderId, Long productId, Long cartId, Double amount, Double price, int quantity, Cart cart,
 			Product product) {
 		super();
 		this.orderId = orderId;
@@ -48,22 +48,22 @@ public class OderDetail {
 		this.cart = cart;
 		this.product = product;
 	}
-	public int getOrderId() {
+	public Long getOrderId() {
 		return orderId;
 	}
-	public void setOrderId(int orderId) {
+	public void setOrderId(Long orderId) {
 		this.orderId = orderId;
 	}
-	public int getProductId() {
+	public Long getProductId() {
 		return productId;
 	}
-	public void setProductId(int productId) {
+	public void setProductId(Long productId) {
 		this.productId = productId;
 	}
-	public int getCartId() {
+	public Long getCartId() {
 		return cartId;
 	}
-	public void setCartId(int cartId) {
+	public void setCartId(Long cartId) {
 		this.cartId = cartId;
 	}
 	public Double getAmount() {

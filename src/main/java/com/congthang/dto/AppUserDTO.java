@@ -1,13 +1,25 @@
 package com.congthang.dto;
 
 public class AppUserDTO {
-	private int userId;
-	private String userName;
-	private String encrytedPassword;
-	private boolean enable;
-	private String firstName;
-	private String lastName;
-	private String email;
+	 
+    private int userId;
+    private String userName;
+    private String firstName;
+    private String lastName;
+    private String email;
+    private String password;
+    private String confirmPassword;
+	public AppUserDTO(int userId, String userName, String firstName, String lastName, String email, String password,
+			String confirmPassword) {
+		super();
+		this.userId = userId;
+		this.userName = userName;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.password = password;
+		this.confirmPassword = confirmPassword;
+	}
 	public int getUserId() {
 		return userId;
 	}
@@ -19,18 +31,6 @@ public class AppUserDTO {
 	}
 	public void setUserName(String userName) {
 		this.userName = userName;
-	}
-	public String getEncrytedPassword() {
-		return encrytedPassword;
-	}
-	public void setEncrytedPassword(String encrytedPassword) {
-		this.encrytedPassword = encrytedPassword;
-	}
-	public boolean getEnable() {
-		return enable;
-	}
-	public void setEnable(boolean enable) {
-		this.enable = enable;
 	}
 	public String getFirstName() {
 		return firstName;
@@ -50,20 +50,27 @@ public class AppUserDTO {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public String getConfirmPassword() {
+		return confirmPassword;
+	}
+	public void setConfirmPassword(String confirmPassword) {
+		this.confirmPassword = confirmPassword;
+	}
 	public AppUserDTO() {
 		super();
 	}
-	public AppUserDTO(int userId, String userName, String encrytedPassword, boolean enable, String firstName,
-			String lastName, String email) {
-		super();
-		this.userId = userId;
-		this.userName = userName;
-		this.encrytedPassword = encrytedPassword;
-		this.enable = enable;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.email = email;
+	@Override
+	public String toString() {
+		return "AppUserForm [userId=" + userId + ", userName=" + userName + ", firstName=" + firstName + ", lastName="
+				+ lastName + ", email=" + email + ", password=" + password + ", confirmPassword=" + confirmPassword
+				+ "]";
 	}
-	
-	
+ 
+   
 }

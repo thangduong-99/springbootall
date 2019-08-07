@@ -1,7 +1,7 @@
-package com.congthang.form;
+package com.congthang.dto;
 
 
-public class PersonForm {
+public class PersonFormDTO {
  
     private String firstName;
     private String lastName;

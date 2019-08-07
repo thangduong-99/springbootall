@@ -4,8 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.congthang.dto.AppUserDTO;
 import com.congthang.entity.AppUser;
-import com.congthang.form.AppUserForm;
 import com.congthang.repository.AppUserRepository;
 import com.congthang.service.AppUserService;
 
@@ -17,7 +17,7 @@ public class AppUserServiceImpl implements AppUserService {
 	private AppUserRepository appUserRepository;
 
 	@Override
-	public AppUser createAppUser(AppUserForm form) {
+	public AppUser createAppUser(AppUserDTO form) {
 		String encrytedPassword = this.passwordEncoder.encode(form.getPassword());
 		AppUser user = new AppUser(form.getUserName(), //
 				encrytedPassword, true, form.getFirstName(), form.getLastName(), form.getEmail());
