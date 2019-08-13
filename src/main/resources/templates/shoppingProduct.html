@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+    <form th:action="@{/product/getname}" th:object="${productDTO}" method="POST">
+        <input type="text" th:field="*{name}" />
+        <input type="submit" value="search">
+    </form>
+    <a th:href="@{/product/tivi}">tivi</a>
+    <a th:href="@{/product/phone}">Điện thoại</a>
+    <table border="1" cellpadding="10">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Image</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="product: ${products}">
+                <td th:text="${product.name}"></td>
+                <td th:text="${product.description}"></td>
+                <td th:text="${product.price}"></td>
+                <td th:text="${product.image}"></td>
+                <td>
+            </tr>
+        </tbody>
+
+    </table>
+</body>
+</html>
+
+</html>

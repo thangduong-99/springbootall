@@ -1,5 +1,7 @@
 package com.congthang.entity;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,7 +14,8 @@ import javax.persistence.UniqueConstraint;
 @Table(name = "App_User", //
 		uniqueConstraints = { //
 				@UniqueConstraint(name = "APP_USER_UK", columnNames = "User_Name") })
-public class AppUser {
+public class AppUser implements Serializable{
+	private static final long serialVersionUID = -2054386655979281969L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -92,6 +95,17 @@ public class AppUser {
 
 	
 	public AppUser( String userName, String encrytedPassword, boolean enabled, String firstName,
+			String lastName, String email) {
+		super();
+		this.userName = userName;
+		this.encrytedPassword = encrytedPassword;
+		this.enabled = enabled;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+	}
+	
+	public AppUser(Long userId, String userName, String encrytedPassword, boolean enabled, String firstName,
 			String lastName, String email) {
 		super();
 		this.userId = userId;
